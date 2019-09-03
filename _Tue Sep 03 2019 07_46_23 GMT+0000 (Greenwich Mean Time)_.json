@@ -1,0 +1,108 @@
+{
+  "snippets": [
+    {
+      "name": "return the longest word in a sentence",
+      "content": "function longest(sentence) {\n    let individual = sentence.split(' ');\n    // split the string where the space occurs\n    let output = []\n    // created the output bucket that will fetch the maximum result\n    let wordLengthArr = [];\n    // created the bucket that will contain each individual strings length\n    individual.map(function(e) {\n        wordLengthArr.push(e.length);\n    });\n    // splits the strings and place them on the bucket\n    let maxi = wordLengthArr.reduce(function(a, b) {\n        return Math.max(a, b);\n        // reduce the array and return the maximum value\n    });\n    individual.map(function(e) {\n        if (e.length === maxi) {\n            // checks array and returns the instance where the maxi corresponds to //the value in maxi\n            output = e;\n        }\n    });\n    console.log(output);\n    // logs the answer to the the console \n    return output;\n    // returns the answer.\n\n}\nlongest(\"obi is a boy and adaobiisago is a beautiful lady\");\n\n\n\n\n\n"
+    },
+    {
+      "name": "circular",
+      "content": "function circularArrayRotation(a, k, queries) {\n  var array=[];\n   debugger\n    for (let i = 1; i < k; i++) {\n        a.unshift(a[a.length - 1]);\n        a.pop();\n   debugger\n    } for(let i=0; i<queries.length-1;i++){\n      array.push(a[queries[i]])\n    } \n    console.log(array)\n    console.log(a[queries[0]], a[queries[1]]);\n    \n\n}\nlet arr=[1,2,3,4,5,6];\nlet que=[2,5]\ncircularArrayRotation(arr,2,que);\n"
+    },
+    {
+      "name": "stringsplotion",
+      "content": "let stri ='thiyis';\nfunction makeover(str){\nvar me ='';\nlet eve=[];\nvar next =''\nfor (let i=0;i<str.length;i++){\n  me+= str[i].repeat(i+1)\n} \nfor(let i=0;i<me.length+1;i++){\n var k= (((i+1)*(i)/2));\n //console.log(k)\n //console.log(i)\n if(i==k){\n   console.log(i)\n   next+=me[i].toUpperCase();\n  } else{\n    next +=me[i]\n  }\n   \n \n\n}\n\nconsole.log(next);\nconsole.log(me);\n}\nmakeover(stri)"
+    },
+    {
+      "name": "removeVovels",
+      "content": "var str =\"This website is for losers LOL!\";\nconst disemvowel = (str) => {\n  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];\n  let newStr = '';\n  for (let i = 0; i <= str.length; i++) {\n    let char = str.charAt(i);\n    if (vowels.indexOf(char) == -1) {\n      newStr += char;\n    }\n  }\n    return newStr;\n    \n  \n};"
+    },
+    {
+      "name": "bouncing ballS",
+      "content": "function bouncingBall(h,  bounce,  window) {\n  if(bounce>=1 || h<=0 ||h<window ){\n  return -1;\n  }\n  var int = 1;\n  var height =h;\n  while(height>window){\nheight = height-height*(1-0.66)\nint++\n}\nreturn int;\n};"
+    },
+    {
+      "name": "displayevenmine",
+      "content": "function displayEven(){\n var num = [1,2,3,4,5,6,7,8];\n var arr =[];\n for(let i=0;i<num.length; i++){\n     if(num[i]%2===0){\n        arr.push(num[i])\n     }\n }return arr;\n \n\n\n}"
+    },
+    {
+      "name": "printFirstAndLast",
+      "content": "\nfunction printFirstAndLast(arr){\n\narr.forEach(function(val,index,arr){\n  console.log(`${val[0]}${val[val.length-1]} `)\n\n\n});\n\n}\n// forEach takes a callback as a parameter\n// the callback(a function) has three paarameters \n// defined as thus function(value, index, arr)\n// where value: the value of the array at the point\n// index: is the index of the array\n// arr: the arr itself\n"
+    },
+    {
+      "name": "binaryTodecimal",
+      "content": "function decimal(binary){\nbinary =binary.toString().split('').reverse();\nvar sum =0;\nfor(let i =0;i<binary.length;i++){\n    var num = Number(binary[i])\n var adding = num*Math.pow(2,i);\n sum+=adding;\n}\n\nreturn sum;\n}\n// i have noticed painfully that this code works for smaller \n// binary < 15 digits but fails slightly at big arrays\n"
+    },
+    {
+      "name": "binarySum",
+      "content": "function addBinary(a,b){\n var sum =a+b;\n var sumi = sum;\n var m =[]\n while(sumi>=0){\n      \n     var i = sumi%2;\n     m.push(i);\n     sumi = sumi-(Math.ceil(sumi/2));\n     if (sumi===0){\n           break;\n     }\n      \n }\n \nreturn m.reverse().join('');\n\n\n}\n\n\n// function addBinary(a,b){\n//   return (a+b).toString(2)\n// }"
+    },
+    {
+      "name": "addKeyAndValue",
+      "content": "function addKeyandValue(arr,key,value){\n\nvar obj = [];\narr.forEach(function(val,index,arr){\nval[key]=value;\nobj.push(val)\n\n})\n\nreturn obj\n\n}\n\n// Write a function called addKeyAndValue which accepts three \n//parameters, an array (of objects), a key and a value. \n//This function should return the array of objects after each \n//key and value have been added to each object in the array.\n"
+    },
+    {
+      "name": "valTimesIndex",
+      "content": "function valTimesIndex(arr){\nvar arri =arr.map(function(val, index,arr){\n     return val*index;\n\n})\nreturn arri // see how we equated the map function to a variable\n// and then returned the variable differently\n\n}\n"
+    },
+    {
+      "name": "extractKey",
+      "content": "function extractKey(arr,nameKey){\nvar arri= arr.map(function(val,index,arr){\n    return val[nameKey];\n });\nreturn arri;\n}\n// when accesing an object dynamically,\n// it is alwasy better to us the bracket\n//notation.\n"
+    },
+    {
+      "name": "filterLetters",
+      "content": "function filterLetters(arr, value){\n  //  arr = arr.toLowerCase();\nvalue=value.toLowerCase();\nvar arri = arr.filter(function(val,index,arri){\n    val=val.toLowerCase();\n    \n    return val===value;\n })\nreturn arri.length;\n}"
+    },
+    {
+      "name": "filterKey",
+      "content": "function filterKey(arr,key){\n     var arri= arr.filter(function(val,index,arr){\n        return val[key] === true;\n\n    })\nreturn arri\n\n}\nclear()\n\n// Write a function called filterKey which\n//  accepts two parameters, an array of objects,\n//   and the name of a key and returns an array with\n//    only those objects which have truthy values for that key:\n\n// eg filterKey([{name: \"Elie\", isInstructor:true, isHilarious: false},{name: \"Tim\", isInstructor:true, isHilarious: true},{name: \"Matt\", isInstructor:true}], \"isHilarious\")\n\n// [{name: \"Tim\", isInstructor:true, isHilarious:true}]"
+    },
+    {
+      "name": "reduce test",
+      "content": "function reducee(arr){\n  debugger\n  \nvar comb =arr.reduce(function(acc,next){\n    return acc + next;\n},{});\n\n return comb;   \n}\n"
+    },
+    {
+      "name": "countDup",
+      "content": "function duplicateCount(arr){\n    arr=arr.toLowerCase();\nvar obj = {};\nvar count =[];\nfor(var i of arr){\n    obj[i] = (obj[i]||0)+1\n}\nfor(var i in obj){\n    if(obj[i]>=2){\n    count.push(i)\n\n    }\n}\nreturn count.length\n}\n\n\n\n\n// for(var i of arr) is different from\n// for(var i in arr) because; in returns the index, while of returns \n// the value at that index.\n\n\n\nfunction duplicatecount2(text){\n  return text.toLowerCase().split('').filter(function(val, i, arr){\n    return arr.indexOf(val) !== i && arr.lastIndexOf(val) === i;\n  }).length;\n}"
+    },
+    {
+      "name": "reduceExample",
+      "content": "var arr = [1,2,3,4];\ndebugger\narr.reduce(function(acc,next){\n    if(next >= 2){\n        acc['key' + next] = next;\n    } \n    return acc;\n},{});"
+    },
+    {
+      "name": "letterCount",
+      "content": "function letterVal(str){\nvar alp = \"abcdefghijklmnopqrstuvwxyz\";\nvar obj = {};\nfor(let i in alp ){\n    obj[alp[i]] = Number(i);\n}\nvar count =0;\nfor (i of str){\n    \n    count += obj[i]+1;\n    }\n\n\nreturn count;\n}"
+    },
+    {
+      "name": "highest",
+      "content": "function high (x){\nvar x=x.split(' ').reverse();\nvar alp = \"abcdefghijklmnopqrstuvwxyz\";\nvar obj = {};\nfor(let i in alp ){\n    obj[alp[i]] = Number(i);\n};\nfunction letterVal(str){\nvar count =0;\nfor (i of str){\n    count += obj[i]+1;\n    }\nreturn count;\n};\nvar output\nvar post = x.map(function(val, index, arr){\n    return letterVal(val)\n})\nlet maxi = post.reduce(function(a, b) {\n        return Math.max(a, b)\n        });\n\n        var final = x.map(function(val) {\n        if (letterVal(val) === maxi) {\n            \n            output = val;\n            \n        }\n    });\n\nreturn output;\n\n}"
+    },
+    {
+      "name": "wordDifference",
+      "content": "function mxdiflg(a,b) {\n if (a.length==0 || b.length ==0 ){\n return -1\n };\n\nvar a11 = [];\nvar a22 = [];\n\n\n for (i of a){\na11.push(i.length)\n };\n\n for (i of b){\na22.push(i.length)\n };\n\nfunction mini(arr){\n    var min = arr[0];\nfor(i of arr){\n    if(i<min){\n        min = i;\n    }\n}return min;\n}\n\n\n\n// function maxi(arr){\n//     var max = arr[0];\n// for(i of arr){\n//     if(i>max){\n//         max = i;\n//     }\n// }return max;\n// }\n\n\n\nvar p = mini(a11)\nvar q=maxi(a11)\nvar r = mini(a22)\nvar s=maxi(a22)\nvar t =q-r;\nvar u =s-p;\n\nreturn (maxi(t,u));\n }\n\n\n//  You are given two arrays a1 and a2 of strings. Each string is composed with letters from a to z. Let x be any string in the first array and y be any string in the second array.\n\n// Find max(abs(length(x) − length(y)))\n\n// If a1 and/or a2 are empty return -1 in each language except in Haskell (F#) where you will return Nothing (None).\n\n// #Example:\n\n// a1 = [\"hoqq\", \"bbllkw\", \"oox\", \"ejjuyyy\", \"plmiis\", \"xxxzgpsssa\", \"xxwwkktt\", \"znnnnfqknaz\", \"qqquuhii\", \"dvvvwz\"]\n// a2 = [\"cccooommaaqqoxii\", \"gggqaffhhh\", \"tttoowwwmmww\"]\n// mxdiflg(a1, a2) --> 13"
+    },
+    {
+      "name": "sumPairs",
+      "content": "var sum_pairs=function(ints, s){\n    var arr=[];\n  var count = 0;\n  while(count<ints.length){\n  for(var i = 0; i<ints.length;i++){\n    if(ints[count]+ints[i]==s && i==count){\n       \n        arr.push(i);\n    }\n  }\n  count++\n  }\n\n\n\n\n if (arr.length ==0){\n    return undefined;\n} var val = Math.min(...arr)\nreturn ([val,s-val])\n    }\n    "
+    },
+    {
+      "name": "sumPairsremix",
+      "content": "\nvar sum_pairs2 = function (arr, sum) {\n    let results = []\n    for (let i = 0; i < arr.length; i++) {\n        for (let j = 0; j < arr.length; j++) {\n            if (arr[i] + arr[j] === sum && i != j && j > i) {\n                results.push(j);\n            }\n        }\n    }\n    if (results.length) {\n        let value = arr[Math.min(...results)];\n        return [sum - value, value];\n    } else {\n        return undefined;\n    }\n}"
+    },
+    {
+      "name": "OOP",
+      "content": "var chuks = function(title,author,numberRead,read){\nthis.title = title;\nthis.author = author;\nthis.numberRead = numberRead;\nthis.read = read;\nthis.info = function(){\n    return (`${title} by ${author}, ${numberRead}, ${read}  `);\n}\n\n\n\n}\n    \n"
+    },
+    {
+      "name": "c in java",
+      "content": "function credit(n){\n\n\n  \n    \n   \n    while (n < 0);\n\n  \n    var odd = 0;\n    var even = 0;\n    //long long temp_n = n;\n    var temp_n=n;\n    var sum_a = 0;\n    var sum_b = 0;\n    var counter = 0;\n    var wow = true;\n\n    \n    while (temp_n > 0)\n    {\n      if(wow){\n        \n        even = temp_n % 10;\n        sum_b = sum_b + even;\n        temp_n = (temp_n - even) / 10;\n        counter++;\n        wow = !wow;}\n       else{\n        odd = temp_n % 10;\n        \n       if(2*odd>9){\n                sum_a =sum_a + 2*odd-9;\n            }else{\n                sum_a = sum_a + 2 * odd;\n            }\n        temp_n = (temp_n - odd) / 10;\n        counter++;\n        wow=!wow;\n       }\n\n    }\n\n\n    var test = (sum_a + sum_b) % 10;\n\n  \n    if (test == 0)\n    {\n        if (counter == 16 && odd == 5 && (even == 1 || even == 2 || even == 3 || even == 4 || even == 5))\n        {\n            return(\"MASTERCARD\\n\");\n        }\n        else if ((counter == 16 || counter == 13) && odd == 4)\n        {\n            return(\"VISA\\n\");\n        }\n        else if (counter == 15 && odd == 3 && (even == 4 || even == 7))\n        {\n            return(\"AMEX\\n\");\n        }\n        else\n        {\n            return(\"INVALID\\n\");\n        }\n    }\n    else\n    {\n        return(\"INVALID\\n\");\n    }\n\n}\n"
+    },
+    {
+      "name": "ceaser",
+      "content": "#include <cs50.h>\n#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\nchar whenLowCap (char k, int l);\nchar whenUpCap (char k, int l);\n\nint main(int argc, string argv[]){\n    if(argc !=2){\n        return 1;\n    }\n    \n int k = atoi(argv[1]); \n    \n    string value = get_string(\"Enter a string:  \");\n    int length = strlen(value);\n    string temp = value;\n    \n    for (int i=0; i<length; i++){\n    if (isupper(value[i]))\n    {\n        \n        temp[i] =whenUpCap(value[i],k); // avoided if else instructions to help the code skip things it doesnt know about.\n    }\n    if (islower(value[i]))\n    {\n       \n        temp[i] = whenLowCap(value[i],k);\n    }\n        \n    \n}  \n    printf(\"ciphertext: %s\\n\",temp);\n}\nchar whenLowCap (char k, int l){\n    int letter = k;                    \n    letter = (letter - 97+l)%26;     // normalizing everything to start at zero;          \n    letter = letter +97;       // implementing the cup swap analogy        \n    k = letter;\n    return k;\n}\n\nchar whenUpCap (char k, int l){\n    int letter = k;                   \n    letter = (letter - 65+l)%26;           \n    letter = letter +65;              // implementing the cup swap algorithm.\n    k = letter;\n    return k;\n}\n\n\n"
+    },
+    {
+      "name": "vigenere.c",
+      "content": "#include <cs50.h>\n#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\nchar convertUp (char k);\nchar convertLow (char k);\nchar whenLowCap (char k, int l);\nchar whenUpCap (char k, int l);\n\nint main(int argc, string argv[])\n{\n    if(argc !=2){\n        return 1;\n    }\n    string k =argv[1];\n    int length = strlen(k);\n    int arVal[length];\n    for(int i=0;i<length;i++){\n        if(isupper(k[i])){\n         arVal[i]=  convertUp(k[i]);\n        }\n        if(islower(k[i])){\n            arVal[i]=convertLow(k[i]);\n        }\n    }\n  \n    string value = get_string(\"Enter a string:  \");\n    int length1 = strlen(value);\n    string temp = value;\n      for (int i=0; i<length1; i++){\n          int val = i%length; // only you knows what algorithm you implemented here\n          int key = arVal[val];\n          \n            if (isupper(value[i])){\n                \n               \n                 temp[i] =whenUpCap(value[i],key);\n            }\n          if (islower(value[i])){\n              \n               temp[i] = whenLowCap(value[i],key);\n          }\n    \n    }\n    printf(\"ciphertext: %s\\n\",temp);\n}\n\nchar convertUp (char k){\n    int letter = k;    // to an int;                \n    letter = (letter - 65);        \n    k = letter;\n    return k;\n}\nchar convertLow (char k){\n    int letter = k;    // to an int;                \n    letter = (letter - 97);          \n    k = letter;\n    return k;\n}\n\nchar whenLowCap (char k, int l){\n    int letter = k;                    \n    letter = (letter - 97+l)%26;     // normalizing everything to start at zero;          \n    letter = letter +97;       // implementing the cup swap analogy        \n    k = letter;\n    return k;\n}\n\nchar whenUpCap (char k, int l){\n    int letter = k;                   \n    letter = (letter - 65+l)%26;           \n    letter = letter +65;              // implementing the cup swap algorithm.\n    k = letter;\n    return k;\n}\n\ns"
+    }
+  ]
+}
